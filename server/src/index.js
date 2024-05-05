@@ -5,12 +5,12 @@ const typeDefs = require("./schema");
 const { addMocksToSchema } = require("@graphql-tools/mock");
 const { makeExecutableSchema } = require("@graphql-tools/schema");
 
-// Mock data to be passed to the front-end, via GraphQL 
+// Mock data loaded in the server to be passed to the front-end, via GraphQL 
 const mocks = {
   Query:()=>({
     tracksForHome:()=>[...new Array(6)]
   }),
-  
+
   Track: () => ({
     id: () => "track_01",
     title: () => "Astro Kitty, Space Explorer",
@@ -27,7 +27,6 @@ const mocks = {
     modulesCount: () => 6,
   }),
 };
-
 
 
 async function startApolloServer() {
